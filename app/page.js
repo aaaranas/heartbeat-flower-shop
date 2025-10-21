@@ -3,99 +3,283 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+      <main className="flex flex-col gap-[28px] row-start-2 items-center sm:items-start max-w-3xl w-full">
+        <div className="flex items-center gap-4">
+          <Image
+            className="dark:invert"
+            src="/heart-logo.svg"
+            alt="Heartbeat Flower Shop logo"
+            width={48}
+            height={48}
+            priority
+          />
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
+              Heartbeat Flower Shop
+            </h1>
+            <p className="text-sm text-muted-foreground">
+              Made-to-order fuzzy-wire flower bouquets — whimsical, durable, and
+              handcrafted to surprise.
+            </p>
+          </div>
+        </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+        <p className="font-mono text-sm/6">
+          Choose colors, size, and a short note. We bend the wire, fluff the
+          petals, and send a little heartbeat.
+        </p>
+
+        <div className="flex gap-4 items-center flex-col sm:flex-row w-full sm:w-auto">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            className="rounded-full bg-foreground text-background px-5 py-3 font-medium text-sm sm:text-base flex items-center justify-center"
+            href="/order"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            Order a bouquet
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] px-5 py-3 font-medium text-sm sm:text-base flex items-center justify-center"
+            href="/gallery"
           >
-            Read our docs
+            Browse gallery
           </a>
         </div>
+
+        <div className="grid grid-cols-3 gap-3 w-full sm:w-auto">
+          <Image
+            src="/bouquet-1.jpg"
+            alt="Fuzzy wire bouquet example 1"
+            width={160}
+            height={120}
+            className="rounded"
+          />
+          <Image
+            src="/bouquet-2.jpg"
+            alt="Fuzzy wire bouquet example 2"
+            width={160}
+            height={120}
+            className="rounded"
+          />
+          <Image
+            src="/bouquet-3.jpg"
+            alt="Fuzzy wire bouquet example 3"
+            width={160}
+            height={120}
+            className="rounded"
+          />
+        </div>
+
+        {/* Best sellers */}
+        <section id="best-sellers" className="w-full mt-4">
+          <h2 className="text-lg font-semibold mb-3">Best sellers</h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            Our most loved fuzzy-wire bouquets — ready to brighten desks, corners,
+            and mailboxes.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <article className="border rounded-lg p-4 flex flex-col items-start gap-3">
+              <Image
+                src="/best-rose.jpg"
+                alt="Heartbeat Rose"
+                width={320}
+                height={220}
+                className="rounded"
+              />
+              <div>
+                <h3 className="font-medium">Heartbeat Rose</h3>
+                <p className="text-sm text-muted-foreground">
+                  Classic warm red petals on a sturdy fuzzy stem.
+                </p>
+                <div className="mt-2">
+                  <a
+                    className="text-sm underline"
+                    href="/order?sku=heartbeat-rose"
+                  >
+                    Order
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article className="border rounded-lg p-4 flex flex-col items-start gap-3">
+              <Image
+                src="/best-daisy.jpg"
+                alt="Dainty Daisy"
+                width={320}
+                height={220}
+                className="rounded"
+              />
+              <div>
+                <h3 className="font-medium">Dainty Daisy</h3>
+                <p className="text-sm text-muted-foreground">
+                  Sunny daisies in mixed pastels — cheerful and low-maintenance.
+                </p>
+                <div className="mt-2">
+                  <a
+                    className="text-sm underline"
+                    href="/order?sku=dainty-daisy"
+                  >
+                    Order
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article className="border rounded-lg p-4 flex flex-col items-start gap-3">
+              <Image
+                src="/best-mixed.jpg"
+                alt="Mixed Melody"
+                width={320}
+                height={220}
+                className="rounded"
+              />
+              <div>
+                <h3 className="font-medium">Mixed Melody</h3>
+                <p className="text-sm text-muted-foreground">
+                  A curated mix of textures and colors for surprising
+                  combinations.
+                </p>
+                <div className="mt-2">
+                  <a
+                    className="text-sm underline"
+                    href="/order?sku=mixed-melody"
+                  >
+                    Order
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        {/* Categories */}
+        <section id="categories" className="w-full mt-6">
+          <h2 className="text-lg font-semibold mb-3">Categories</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="border rounded-lg p-4">
+              <h3 className="font-medium mb-2">By size</h3>
+              <ul className="text-sm text-muted-foreground space-y-2">
+                <li>
+                  <a
+                    href="/gallery?size=small"
+                    className="underline"
+                  >
+                    Small — pocket-sized bundles
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/gallery?size=medium"
+                    className="underline"
+                  >
+                    Medium — everyday bouquets
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/gallery?size=large"
+                    className="underline"
+                  >
+                    Large — statement pieces
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="border rounded-lg p-4">
+              <h3 className="font-medium mb-2">By flower type</h3>
+              <ul className="text-sm text-muted-foreground space-y-2">
+                <li>
+                  <a
+                    href="/gallery?type=roses"
+                    className="underline"
+                  >
+                    Roses
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/gallery?type=daisies"
+                    className="underline"
+                  >
+                    Daisies
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/gallery?type=mixed"
+                    className="underline"
+                  >
+                    Mixed & textured
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/gallery?type=minis"
+                    className="underline"
+                  >
+                    Mini stems
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Customize */}
+        <section id="customize" className="w-full mt-6">
+          <h2 className="text-lg font-semibold mb-3">
+            Customize your own bouquet
+          </h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            Pick colors, choose a size, and add a short note. We'll handcraft a
+            one-of-a-kind fuzzy-wire bouquet.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 items-start">
+            <a
+              className="rounded-full bg-foreground text-background px-5 py-3 font-medium text-sm sm:text-base flex items-center justify-center"
+              href="/customize"
+            >
+              Customize now
+            </a>
+            <div className="text-sm text-muted-foreground">
+              Prefer a quick preset?{" "}
+              <a href="/order" className="underline">
+                Order a preset
+              </a>{" "}
+              or browse the{" "}
+              <a href="/gallery" className="underline">
+                gallery
+              </a>
+              .
+            </div>
+          </div>
+        </section>
       </main>
+
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          className="hover:underline"
+          href="mailto:hello@heartbeatflowershop.example"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          Contact
         </a>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          className="hover:underline"
+          href="https://instagram.com/heartbeatflowershop"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
+          Instagram
         </a>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          className="hover:underline"
+          href="https://etsy.com/shop/heartbeatflowershop"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
+          Shop (Etsy)
         </a>
       </footer>
     </div>
