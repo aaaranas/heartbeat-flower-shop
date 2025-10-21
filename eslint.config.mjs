@@ -10,7 +10,10 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  // Extend Next.js recommended rules
   ...compat.extends("next/core-web-vitals"),
+
+  // Custom configuration
   {
     ignores: [
       "node_modules/**",
@@ -19,6 +22,11 @@ const eslintConfig = [
       "build/**",
       "next-env.d.ts",
     ],
+
+    rules: {
+      // Disable apostrophe escape requirement in JSX text
+      "react/no-unescaped-entities": "off",
+    },
   },
 ];
 
