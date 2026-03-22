@@ -7,7 +7,7 @@ export default function Home() {
         <div className="flex items-center gap-4">
           <Image
             className="dark:invert"
-            src="/heart-logo.svg"
+            src="/heartbeat-logo.png"
             alt="Heartbeat Flower Shop logo"
             width={48}
             height={48}

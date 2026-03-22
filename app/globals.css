@@ -3,6 +3,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --accent: #d4456a;
+  --accent-light: #fdf0f3;
+  --bg: #fdfaf7;
+  --bg-subtle: #f5ede8;
+  --card-bg: #ffffff;
+  --text: #1a1614;
+  --text-muted: #7a6b65;
+  --border: #e8ddd7;
+  --font-display: var(--font-geist-sans);
+  --font-body: var(--font-geist-sans);
 }
 
 @theme inline {
@@ -16,6 +27,13 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --bg: #16110f;
+    --bg-subtle: #1f1714;
+    --card-bg: #221a17;
+    --text: #f5ede8;
+    --text-muted: #9e8880;
+    --border: #3a2d28;
+    --accent-light: #3a1520;
   }
 }
 
